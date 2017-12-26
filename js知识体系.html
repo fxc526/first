@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            margin: auto auto;
+            border: 1px black solid;
+        }
+        td{width: 400px;
+            height: 30px;
+            text-align: center;
+            padding: 5px;
+        }
+        h1{
+            text-align: center;
+        }
+        th{
+            width: 300px;
+            color: red;
+            font-size: 20px;
+        }
+        a{
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+<h1>js知识体系</h1>
+<div>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th rowspan="3">js概念和组成</th>
+            <td>js的组成</td>
+            <td colspan="3">ECMAscript(语法标准),BOM(游览器对象模型)和DOM(文档对象模型)</td>
+            <td>js是基于对象和事件驱动的脚本语言</td>
+        </tr>
+        <tr>
+            <td>js在网页中的应用</td>
+            <td colspan="2">行内，在body里面，在head里面，外部js样式</td>
+            <td>
+                <a href="../js1%20基础语法/js放置的位置.html">例子</a>
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>js的核心语法</td>
+            <td colspan="3">变量，语法约定，数据类型，注释，运算符号，控制语句，数组</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <th rowspan="4">变量</th>
+            <td>变量的声明和赋值</td>
+            <td colspan="2">1：先声明变量再赋 2：同时声明再赋值 3：不声明直接赋值</td>
+            <td><a href="../js1%20基础语法/2.html">例子</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>变量的命名规范</td>
+            <td colspan="2">1：可以数字，字母，下划线和$字符号组成
+                2：首字母不能是数字 3：不能使用关键字，保留字命名 4：
+                注意大小写</td>
+            <td><a href="../js1%20基础语法/1.html">例子</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>变量的作用域</td>
+            <td colspan="2">1：全局变量（声明在函数之外，在任何地方都可以用）
+                2：局部变量（声明在函数内，只能在当前函数里面使用，在函数被调用时生效
+                ，函数在不能使用的时候，局部变量会被销毁。节省内存） 3：不能使用关键字，保留字命名 4：
+                注意大小写</td>
+            <td><a href="../js1%20基础语法/变量作用域.html">例子</a></td>
+            <td>注意：变量作用域取决与它声明在哪块区域</td>
+        </tr>
+        <tr>
+            <td>运算符</td>
+            <td colspan="2">1：算数运算符：
+                2：赋值运算符：
+                3：比较运算符
+                4：逻辑运算符
+                5：条件运算符
+                注意大小写</td>
+            <td><a href="../js1%20基础语法/运算符.html">例子</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <th rowspan="2">数据类型和数据类型的转换</th>
+            <td>数据类型</td>
+            <td colspan="2">1：String(字符串)
+                2：Number(数字)
+                3：Boolean（布尔值）
+                4：Undefined（未定义）
+                5：Null(空值)
+                6：Array(数组)
+            </td>
+            <td><a href="../js2%20选择结构和数据类型/数据类型及转换和函数.html">例子</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>数据类型的转换</td>
+            <td colspan="2">1：转换函数 ParseInt() PaseFloat()
+                2：强制类型的转换：Boolean() Number() String()
+                3：弱类型转换
+            </td>
+            <td><a href="../js2%20选择结构和数据类型/数据类型及转换和函数.html">例子</a></td>
+            <td>弱类型转换：在用==时，值相等，自动把字符串转换</td>
+        </tr>
+        <tr>
+            <th rowspan="4">程序结构</th>
+            <td>程序结构</td>
+            <td colspan="3">
+                1：顺序结构：计算机从上到下每行按照写的指令顺序来执行
+                2：选择结构：存在条件根据条件判断结果选择后续事宜
+                3：循环结构:循环重复做同一件事
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="3">选择结构</td>
+            <td colspan="2">if(条件为真执行的代码)｛js语句｝else{条件为假执行的代码}</td>
+            <td rowspan="3"><a href="../js2%20选择结构和数据类型/选择结构恋爱和花语.html">if例子</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+
+            <td colspan="2">switch(表达式)｛case 常量1：js语句；break;
+                .....darault:js语句；break;｝</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+
+            <td colspan="2">if(条件1为真执行的代码)｛js语句｝
+                else if(条件2为真执行的代码){js语句}
+                else{条件1，2都不满足执行的代码}
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <th rowspan="2">调试</th>
+            <td>语法错误</td>
+            <td colspan="3">无法显示，编辑器和浏览器一般都会提示（标点符号，大小写，命名，拼写）</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>逻辑错误</td>
+            <td colspan="3">逻辑处理上写错，不影响运行，但结果错误（拼写错误，条件判断上出现疏漏）</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <th rowspan="2">函数和数组</th>
+            <td>
+                函数
+            </td>
+            <td>
+                程序的基本单元，是完成特定任务的代码语句快
+            </td>
+            <td>
+                特征：1实现一定功能 2：可以有参数
+                3：可以返回一个结果
+            </td>
+            <td>
+                分类：1系统函数 2：自定义函数
+            </td>
+            <td><a href="../js3%20函数和数组/有名函数.html">函数</a></td>
+        </tr>
+        <tr>
+            <td>数组</td>
+            <td>创建:1系统自带 2：自定义函数</td>
+            <td>方法：1join() 2:sort()3:posh()4:splice()</td>
+            <td>属性：length</td>
+            <td><a href="../js3%20函数和数组/数组.html">数组</a></td>
+        </tr>
+        <tr>
+            <th rowspan="2">循环</th>
+            <td>for循环</td>
+            <td colspan="3">for(初始条件;循环条件;条件迭代;){循环执行的语句}</td>
+            <td><a href="../js4%20循环/循环.html">for循环例子</a></td>
+        </tr>
+        <tr>
+            <td>while循环</td>
+            <td colspan="3">初始部分;while(循环条件)｛循环操作;迭代部分｝</td>
+            <td><a href="../js4%20循环/while循环.html">while循环例子</a></td>
+        </tr>
+        <tr>
+            <th rowspan=9>Bom(游览器对象模型)</th>
+            <td rowspan="2">window对象</td>
+            <td>常用事件</td>
+            <td>1：onlick:一个页面一幅画像完成加载
+                2：onmouseover:鼠标移入到某一元素上
+                3：onclick:点击事件
+                4：onkendown:键盘某个键被按下
+                5：onchange:域的内容被改变
+            </td>
+            <td><a href="../js5%20BOM/window常用事件和方法.html">window事件</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+
+            <td>常用方法</td>
+            <td>1：alert():确定按钮的警示框
+                2：promept():确定和取消按钮的对话框
+                3：confirm():关闭浏览器窗口
+                4：close():关闭浏览器窗口，
+                5: open():打开游览器窗口
+                5：setTimeout():执行一次
+                6：setIntervar():执行多次
+            </td>
+            <td><a href="../js5%20BOM/window常用事件和方法.html">window方法</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+
+            <td>history对象常用方法</td>
+            <td colspan="2">1：上一个   history.back()    history.go(-1)
+                2：下一个  history.forward()    history.go(1)
+            </td>
+            <td><a href="../js5%20BOM/history对象.html">history方法</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>location对象常用方法</td>
+            <td colspan="2">
+                1:设置或返回主机名和当前URL的端口号    location. host
+                2:设置或返回当前URL的主机名  location. hostname
+                3:设置或返回完整的URL      location.href
+                4:重新加载当前文档        location.reload()
+                5:用新的文档替换当前文档     location.replace()
+
+            </td>
+            <td><a href="../js5%20BOM/location对象.html">location方法</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>document对象中获取节点的方法</td>
+            <td colspan="2">
+                1:通过指定的id获得   document.getElementById()
+                2:返回带有指定名称的对象的集合        document.getElementsByName()
+                3:返回带有指定标签名的对象的集合     document.getElementsByTagName()
+
+            </td>
+            <td rowspan="5"><a href="../js5%20BOM/location对象.html">获取节点,Math对象,Date对象,设置定时函数.清除定时函数的方法</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>Math对象</td>
+            <td colspan="2">
+                ①上舍入     Math. ceil()
+                ②下舍入     Math. floor()
+                ③四舍五入 Math.round()
+                ④随机数     Math.random()
+
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>Date对象</td>
+            <td colspan="2">
+                ①获取当前时间var today1 = new Date();
+                ②获取参数设置的时间  var today2 = new Date("8 28,2015,23:45:8");
+                ③方法：
+                getFullYear()      		返回 Date 对象的年份，其值为4位数
+                getMonth() 		返回 Date 对象的月份，其值介于0～11之间
+                getDate() 			返回 Date 对象的一个月中的每一天，其值介于1～31之间
+                getHours() 		返回 Date 对象的小时数，其值介于0～23之间
+                getMinutes() 		返回 Date 对象的分钟数，其值介于0～59之间
+                getSeconds() 		返回 Date 对象的秒数，其值介于0～59之间
+                getDay() 			返回 Date 对象的星期中的每一天，其值介于0～6之间
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>设置定时函数</td>
+            <td colspan="2">
+                setTimeout("调用的函数",等待的毫秒数)
+                setInterval("调用的函数",间隔的毫秒数)
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>清除定时函数</td>
+            <td colspan="2">
+                clearTimeout(setTimeout()返回的ID值)
+                clearInterval(setInterval()返回的ID值)
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <th rowspan="12">DOM(文档对象模型)</th>
+            <td>查看节点属性</td>
+            <td colspan="2">
+                节点名.getAttribute("属性名")
+            </td>
+            <td rowspan="11"><a href="../js6%20DOM/删除和替换节点.html">例子<br>
+            </a>
+                <a href="../js6%20DOM/增加和复制节点.html">例子</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>改变节点的属性和值</td>
+            <td colspan="2">
+                节点名.setAttribute("属性名","属性值")
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>改变HTMl CSS样式</td>
+            <td colspan="2">
+                document.getElementById("节点名").style.样式名 = "值"
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>改变HTMl的内容</td>
+            <td colspan="2">
+                document.getElementById("节点名").innerHTML = "新内容"
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>改变HTML的属性</td>
+            <td colspan="2">
+                document.getElementById("节点名").属性名 = "新属性值"
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>给指定的标签名创建一个新的节点元素</td>
+            <td colspan="2">
+                document.createElement("标签名")
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>向已存在的节点列表里的末尾添加一个新的子节点</td>
+            <td colspan="2">
+                已存在的节点.appendChild("节点名")
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>向指定的节点之前插入一个新节点</td>
+            <td colspan="2">
+                insertBefore(新节点,旧节点)
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>复制某个指定的节点</td>
+            <td colspan="2">
+                cloneNode()
+            </td>
+            <td>（如果小括号里不写值就只复制节点本身，写了 true 复制这个节点里面的所有的后代元素）</td>
+        </tr>
+        <tr>
+            <td>删除节点</td>
+            <td colspan="2">
+                document.body(父节点名).removeChild(要删除的节点名)
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>替换节点</td>
+            <td colspan="2">
+                document.body(父节点名).replaceChild(用来替换的节点名,被替换的节点名)
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>条件运算符</td>
+            <td colspan="2">
+                ?: 条件运算符（三元运算符、三目运算符）只能改选二选一的条件判断
+                问号前面是条件?中间是满足条件时执行的代码:后面是条件为假时的代码
+            </td>
+            <td><a href="../js2%20选择结构和数据类型/选择结构恋爱和花语.html">条件运算符例子</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <th rowspan="11">表单验证</th>
+            <td>String对象的属性</td>
+            <td colspan="2">
+                length属性 --用来获取字符串的长度
+            </td>
+            <td>例：var str = "this is JavaScript";
+                var strLength = str.length;</td>
+            <td>(长度从1开始，空格，正数，汉子算一个长度，负数是两个长度)
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="5">string对象的方法</td>
+            <td colspan="2">
+                方法:toLowerCase() 描述:把字符串转化为小写。
+            </td>
+            <td rowspan="5"><a href="../js7%20表单基本验证/string.html">string例子</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                方法:toUpperCase()  描述:把字符串转化为大写。
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                方法:charAt(index) 描述:返回在指定位置的字符。
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                方法:indexOf(字符串，index)   描述:查找某个指定的字符串在字符中首次出现的位置。
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                方法:substring(index1,index2) 描述:返回位于指定索引index1和index2之间的字符串，
+                并且包括索引index1对应的字符，不包括索引index2对应的字符（包前不包后）。
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="5">文本框特效</td>
+            <td colspan="2">
+                事件: onblur    失去焦点，方光标离开某个文本框时触发
+            </td>
+            <td rowspan="5"><a href="../js7%20表单基本验证/文本框特效.html">文本框特效例子</a></td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                事件: onblur    onfocus   获得焦点，方光标进入某个文本框时触发
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                方法: blur（）  从文本域中移开焦点
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                方法:focus（） 在文本域中设置焦点，即获得鼠标光标
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                方法:select（）选取文本域中的内容，突出显示输入区域的内容
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <th rowspan="10">jquery基础</th>
+            <td>jQuery语法结构（掌握）</td>
+            <td colspan="2">
+                $("选择器").事件名(function(){});
+            </td>
+            <td>例：$(document).ready(function(){
+                $(".list li").click(function(){
+                $(this).css({"background":"#fff","color":"red"});
+                });
+                });
+            </td>
+            <td>jq的对象是个数组 对象集合</td>
+        </tr>
+        <tr>
+            <td rowspan="3">设置css属性</td>
+            <td colspan="2">
+                （单个属性设置） $(selector).css("属性","属性值");
+            </td>
+            <td>例：$("p").css("color","#fff");</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td  colspan="2">
+                （多个属性设置） $(selector).css({"属性":"属性值","属性":"属性值"})；
+            </td>
+            <td>例：$("p").css({"color":"#fff","font-size":"18px","background":"blue"});</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td  colspan="2">
+                （读取css属性值）$(selector).css("属性")；
+            </td>
+            <td>例：$("p").css("color");</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="4">基本选择器</td>
+            <td colspan="2">
+                （标签选择器）
+            </td>
+            <td>例：$("p").css({"font-size":"18px","color":"#fff"});</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                （类选择器）
+            </td>
+            <td>例：$(".param").css({"font-size":"20px","background":"red"});</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                （ID选择器）
+            </td>
+            <td>例：$("#only").css({"color":"#fff","background":"#000"});</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                （并集选择器）
+            </td>
+            <td>例: $("div,p").css({"font-size":"14px"});</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="2">层级选择器</td>
+            <td colspan="2">
+                （后代选择器）
+            </td>
+            <td>例：$(".contain p").css({"font-size":"20px","background":"red"});</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                （子选择器）
+            </td>
+            <td>例：$(".contain > p").css({"color":"#fff","background":"#000"});</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <th rowspan="16">jquery事件</th>
+            <td rowspan="3">鼠标事件</td>
+            <td colspan="2">
+                click()          单击
+            </td>
+            <td> 例： $(document).ready(function(){
+                $("#btn1").click(function(){
+                $(".login").css("display","block");
+                });
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                mouseover()     鼠标移入
+            </td>
+            <td>例：$("#btn2").mouseover(function(){
+                $(".more").css("display", "block");
+                });</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                mousout()       鼠标移出
+            </td>
+            <td>例： $("#btn2").mouseout(function (){
+                $(".more").css("display","none");
+                });</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="2">键盘事件</td>
+            <td colspan="2">
+                keydown()      按下按键时
+            </td>
+            <td> 例：$(document).keydown(function(event){
+                console.log(event.keyCode);
+                if(event.keyCode == 13){
+                console.log("你按下了enter键");
+                })
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                keyup()       释放按键时
+            </td>
+            <td>例：$(document).keyup(function(event){
+                if(event.keyCode == 65){
+                console.log("你松开了按下a键的手");
+                }
+                })</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="2">表单事件</td>
+            <td colspan="2">
+                focus（）    获得焦点
+            </td>
+            <td> 例：  $("input").focus(function(){
+                $(".tishi").text("请输入昵称");
+                });
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                blur（）     失去焦点
+            </td>
+            <td>例：$("input").blur(function(){
+                $(".tishi").text("该昵称已被注册");
+                });</td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="2">绑定事件</td>
+            <td colspan="2">
+                bind(type,[data],fn)
+                单个事件
+            </td>
+            <td> 例：  $("#divbind").bind("click",function(){
+                console.log("你点击了")
+                });
+            </td>
+            <td>type:   事件类型
+                [data]: 可选参数
+                fn:     处理函数
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                bind(type,[data],fn) 多个事件
+            </td>
+            <td>例：$("#divbind1").bind({
+                mouseover:function(){
+                console.log("你的鼠标在divnind1上");
+                },
+                mouseout:function(){
+                console.log("你的鼠标离开了divnind1");
+                },
+                click:function(){
+                console.log("加了一个点击事件");
+                }
+                })
+            </td>
+            <td>type:   事件类型
+                [data]: 可选参数
+                fn:     处理函数</td>
+        </tr>
+        <tr>
+            <td>解除绑定</td>
+            <td colspan="2">
+                unbind（[type],fn）
+                无参数时，意味着移除所有的绑定事件
+            </td>
+            <td> 例： $("#divbind").bind("click",function(){
+                $("#divbind").unbind();
+                console.log("移除了绑定事件")
+                });
+
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>hover()方法</td>
+            <td colspan="2">
+                hover(entet.leave)
+                模拟鼠标悬停和离开事件
+            </td>
+            <td> 例： $("#divhover").hover(
+                function(){
+                console.log("鼠标在divhover上");
+                },
+                function() {
+                console.log("鼠标离开了divhover");
+
+                });
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="2">toggle()方法</td>
+            <td colspan="2">
+                toggle(fn1,fn2,....fnN);
+                用于模拟鼠标连续点击事件
+            </td>
+            <td>
+                例：  $("#divtoggle").toggle(
+                function(){
+                $(this).css("background-color","green");
+                },
+                function(){
+                $(this).css("background-color","red");
+                }
+                )
+            </td>
+            <td>toggle()里没有参数时，是一个切换效果，</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                toggle(fn1,fn2,....fnN);
+                参数为数字时，是设定过渡的时间
+            </td>
+            <td>
+                例：$("#divtoggle1").click(function(){
+                $("#divtoggle3").toggle(2000);
+                })
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>常用系统函数</td>
+            <td colspan="2">
+                isNaN()：用于检查其参数是否是非数字
+            </td>
+            <td>
+                例：  document.write(isNaN(123))
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="2">css操作函数</td>
+            <td colspan="2">
+                height()    width()     设置或返回匹配元素的高度宽度
+            </td>
+            <td>
+                例：  console.log("获取高度为："+$("div").height());        获得高度
+                $("div").height("50px");                            设置高度
+            </td>
+            <td>像素后面的单位px可加可不加，加上为好</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                height()    width()     设置或返回匹配元素的高度宽度
+            </td>
+            <td>
+                例：   console.log("获取宽度为："+$("div").width());       获得宽度
+                $("div").width("350");                              设置宽度
+            </td>
+            <td>像素后面的单位px可加可不加，加上为好</td>
+        </tr>
+        <tr>
+            <th rowspan="9">jquery遍历和特效</th>
+            <td rowspan="3">jq遍历</td>
+            <td colspan="2">
+                遍历后代
+            </td>
+            <td>.children() 获取所有直接子元素
+                .find()     获取后代元素，一路向下直到最后一代
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                遍历同辈元素
+            </td>
+            <td>  .siblings() 获取所有同胞元素
+                .next()     获取下一个同胞元素
+                .nextAll()  获取向下所有跟随的同胞元素
+                .prev()     获取上一个同胞元素
+                .prevAll()  获取向上所有跟随的同胞元素
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                遍历前辈元素
+            </td>
+            <td>  .parent()       获取直接父元素
+                .parents()      获取所有祖先元素，它一路向上直到文档的根元素
+            </td>
+            <td>根元素 html</td>
+        </tr>
+        <tr>
+            <td> 过滤元素</td>
+            <td colspan="2">
+                .first() 获取首个元素
+                .last()  获取最后一个元素
+                .eq()    获取带有指定索引号的元素
+            </td>
+            <td><a href="../js10%20遍历和特效/过滤函数.html">过滤函数例子</a>
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>控制元素显示</td>
+            <td colspan="2">
+                $(selector).show(speed,callback);
+                speed 参数规定效果时长。取值："slow"、"fast" 或毫秒。
+                callback参数是 fading 完成后所执行的函数名称。
+            </td>
+            <td>
+                eg1:.show()无参数时一瞬间显示
+
+                eg2:.show(参数一)元素显示时有延时控制
+
+                eg3:.show(参数一,参数二)元素显示时有延时控制且显示完后能执行一定的函数功能
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>控制元素隐藏</td>
+            <td colspan="2">
+                $(selector).hide(speed,callback);
+                speed 参数规定效果时长。取值："slow"、"fast" 或毫秒。
+                callback参数是 fading 完成后所执行的函数名称。
+            </td>
+            <td>
+                eg1:.hide()无参数时一瞬间隐藏
+
+                eg2:.hide(参数一)元素隐藏时有延时控制
+
+                eg3:.hide(参数一,参数二)元素隐藏时有延时控制且显示完后能执行一定的函数功能
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>淡入</td>
+            <td colspan="2">
+                $(selector).fadeIn(speed,callback);
+                speed 参数规定效果时长。取值："slow"、"fast" 或毫秒。
+                callback参数是 fading 完成后所执行的函数名称。
+            </td>
+            <td>
+                eg1:.fadeIn()无参数时元素快速淡入
+
+                eg2:.fadeIn(参数一)元素淡入时有延时控制
+
+                eg3:.fadeIn(参数一,参数二)元素淡入时有延时控制且淡入完后能执行一定的函数功能
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>淡出</td>
+            <td colspan="2">
+                $(selector).fadeOut(speed,callback);
+                speed 参数规定效果时长。取值："slow"、"fast" 或毫秒。
+                callback参数是 fading 完成后所执行的函数名称
+            </td>
+            <td>
+                eg1:.fadeOut()无参数时元素快速淡出
+
+                eg2:.fadeOut(参数一)元素淡出时有延时控制
+
+                eg3:.fadeOut(参数一,参数二)元素淡出时有延时控制且淡出完后能执行一定的函数功能
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>淡入与淡出的切换</td>
+            <td colspan="2">
+                $(selector).fadeToggle(speed,callback);
+                speed 参数规定效果时长。取值："slow"、"fast" 或毫秒。
+                callback参数是 fading 完成后所执行的函数名称。
+            </td>
+            <td>
+                淡入淡出与显示隐藏的区别：淡入淡出是以改变元素的透明度来展示元素的，
+                显示隐藏是以改变元素的宽高来展示元素的。
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <th rowspan="17">jquery操作网页元素和动画</th>
+            <td rowspan="3">操作样式</td>
+            <td colspan="2">
+                追加
+            </td>
+            <td>addClass(class1 class2...);
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                移除
+            </td>
+            <td>removeClass(class1 class2...);
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                切换
+            </td>
+            <td>toggleClass(class);
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="3">节点属性</td>
+            <td colspan="2">
+                获取属性值
+            </td>
+            <td>$(selector).attr(name);
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                设置多个属性值
+            </td>
+            <td>$(selector).attr({[name1:value1],[name2:value2]  ...
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                删除节点属性
+            </td>
+            <td>$(selector).removeAttr(name);
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="3">设置或返回元素</td>
+            <td colspan="2">
+                内容
+            </td>
+            <td>$(selector).html();
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                文本内容
+            </td>
+            <td>$(selector).text();
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                表单字段内容
+            </td>
+            <td>$(selector).val();
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="3">创建节点</td>
+            <td colspan="2">
+                HTML
+            </td>
+            <td>var text = "<p>以HTML创建新元素</p>"
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                jQuery
+            </td>
+            <td>var txt1 = $("<p></p>").html("jQuery创建新元素");
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                DOM
+            </td>
+            <td>var txt2 = document.createElemenent("p")
+                txt2.innerHTML="以DOM创建新元素 " ;
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>添加节点 </td>
+            <td colspan="2">
+                before(B)   A
+                \prepend(B) 123  append(B)\
+                after(B)
+            </td>
+            <td>例子：$(A).before/after/...(B);
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td rowspan="2">删除节点 </td>
+            <td colspan="2">
+                remove()
+            </td>
+            <td>删除被选元素及其子
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                empty( )
+            </td>
+            <td>删除被选元素中的子元素
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>自定义动画  </td>
+            <td colspan="2">
+                $(selector).animate({params},speed,callback);
+            </td>
+            <td>params:必选，定义形成动画的CSS属性speed :可选，规定效果的时长，默认值“normal”可取值：毫秒（如 1000）、fast、slow
+                callback:可选，是动画完成后所执行的函数名，在设置speed参数之后
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>停止动画 </td>
+            <td colspan="2">
+                常用的，$(selector).stop(); 或者 $(selector).stop(stopAll,goToEnd);
+            </td>
+            <td> (默认值为false)
+            </td>
+            <td>备注</td>
+        </tr>
+        <tr>
+            <td>HTML5 </td>
+            <td colspan="2">
+                常用的，$(selector).stop(); 或者 $(selector).stop(stopAll,goToEnd);
+            </td>
+            <td> (默认值为false)
+            </td>
+            <td>备注</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>抽奖</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .box{
+                width: 300px;
+                height: 300px;
+                background:black;
+                margin: 50px auto;
+                text-align: center;
+                line-height: 300px;
+            }
+            .login{
+                background: blueviolet;
+                color: red;
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <p><input type="button" value="点击开始抽奖" class="login" onclick="luck()"></p>
+        </div>
+        <script>
+            alert("您共有3次抽奖机会，请开始抽奖");
+            var j =3;
+            function luck(){
+                var num = parseInt(10*Math.random());//产生0-10之间的随机整数
+                j--;
+                if(j>=0){
+                    if(num == 1){
+                        alert("恭喜抽中一等奖,您还有"+j+"次机会");
+                    }else if(num>2 || num<8){
+                        alert("没抽中，不要灰心，再来一次。您还有"+j+"次机会");
+                    }else{
+                        alert("恭喜抽中二等奖，您还有"+j+"次机会")
+                    }
+                }else{
+                    alert("您没有抽奖机会了，请充值")
+                }
+            }
+        </script>
+
+    </body>
+</html>

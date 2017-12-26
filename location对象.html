@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>location对象</title>
+        <script>
+            window.onload = function () {
+                var btn = document.getElementsByTagName("input");
+                btn[0].onclick = function () {
+                    alert(location);
+                };
+                btn[1].onclick = function () {
+                  location="抽奖.html"
+                }
+            }
+        </script>
+        <!--属性：location.host 返回主机名和当前URL的端口号
+          location.hostname 返回当前URL的主机名
+          location.href  返回完整的URL
+          方法：location.reload()刷新页面
+          location.replace("http://www.baidu.com")用新的文档替换-->
+    </head>
+    <body>
+    <input type="button" value="显示当前的URL">
+    <input type="button" value="改变 URL">
+    </body>
+</html>

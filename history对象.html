@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history对象</title>
+    <script>
+        //加载函数
+            function goBack()
+            {
+                history.back()
+                    }//返回上一个url}
+            function goForward()
+            {
+                history.forward();//下一个url
+            }
+            function go()
+            {
+                history.go(1);//下一个url
+            }
+    </script>
+</head>
+<body>
+<input type="button" value="Back" onclick="goBack()">
+<input type="button" value="Forward" onclick="goForward()">
+<input type="button" value="go" onclick="go()">
+<input type="button" value="例子" onclick="li()">
+<script>
+    function li() {
+        location="抽奖.html"
+    }
+</script>
+</body>
+</html>

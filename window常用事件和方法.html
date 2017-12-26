@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>window常用事件</title>
+        <style>
+            #div1{
+                width: 200px;
+                height: 200px;
+                border: 2px solid red;
+                margin: 40px;
+            }
+        </style>
+        <script>
+            //1.加载函数
+            window.onload = function () {
+                //2.获取节点
+                var btn = document.getElementById("btn");
+                var Odiv = document.getElementById("div1");
+                //console.log(Odiv); 检测节点已获取
+                //3.鼠标移入事件 移入时给div添加红色的背景色
+                Odiv.onmouseover = function () {
+                    Odiv.style.background = "red";
+                };
+                //4.鼠标移出事件，移出时背景变灰色
+                Odiv.onmouseout = function () {
+                    Odiv.style.background = "#ccc";
+                    Odiv.style.width = "200px";
+                    Odiv.style.height = "200px";
+                };
+                //5.点击div,让div变大
+                Odiv.onclick = function () {
+                    Odiv.style.height = "500px";
+                    Odiv.style.width = "500px";
+                };
+                //6.键盘上的键按下事件
+                document.onkeydown = function () {
+                    alert(1111)
+                };
+                //7.改变域的内容
+                var inp = document.getElementById("txt1");
+                //console.log(inp);节点已获取
+                inp.onchange = function () {
+                    inp.value = inp.value + "大坏蛋"
+                };
+                btn.onclick = function () {
+                    if(confirm("确定关闭网页吗")){ //window对象常用方法
+                        close();
+                        open("for循环数组.html");
+                    }else{
+                        Odiv.innerHTML = prompt("你想干什么");
+                        txt1.value = prompt("你想干什么");
+                    }
+                };
+                btn3[1].onclick = function () {
+                    btn3[1].style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <input type="text" id="txt1">
+        <button id="btn">点击</button>
+        <button id="btn1">删除</button>
+        <script>
+            var btn3 = document.getElementsByTagName("button");
+            console.log(btn3[1])
+        </script>
+    </body>
+</html>
