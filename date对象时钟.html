@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>39 方源 时钟</title>
+        <script>
+            var date1 = new Date();//当前时间
+            document.write("当前时间："+date1+'<br>');
+            var date2 = new Date("10 12,2017,20:00:00");
+            document.write("设定的时间："+date2);
+        </script>
+        <style>
+            body{
+                background-color: black;
+                text-align: center;
+            }
+            #div1{
+                width: 700px;
+                height: 100px;
+                margin: 50px auto;
+                border: 2px solid red;
+                color: white;
+                font-size: 50px;
+                line-height: 100px;
+                font-weight: bold;
+            }
+            #div2{
+                width: 400px;
+                height: 100px;
+                margin: 40px auto;
+                border: 2px solid green;
+                color: white;
+                font-size: 70px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <button>暂停</button>
+        <button>继续</button>
+        <script>
+            //1.获取节点
+            var dateBox = document.getElementById("div1");
+            var timeBox = document.getElementById("div2");
+            var btn = document.getElementsByTagName("button");
+            console.log(dateBox,timeBox,btn);//检测节点已获取.
+            //6.把需要每个一秒跑起来的时间封装到一个有名函数里面
+            var month;//存放月份
+            function clock(){
+                //2.创建日期对象
+                var date1 = new Date();
+                //时分秒补位
+                var c = date1.getSeconds();//赋值c等于获取秒钟
+                var d = date1.getMinutes();//赋值c等于获取分钟
+                var f = date1.getHours();//赋值c等于获取时钟
+                /*if(c <10){
+                    c="0"+c;
+                }*///在else不需要做任何操作的情况下，可以省略
+              /*  c<=9?c="0"+c:c;
+                d<=9?d="0"+d:d;
+                f<=9?f="0"+f:f;*/
+                //二选一可以用条件运算符 冒号后面不能省略
+                //封装补位函数 方便多个位置补位
+                function bu(bian){
+                    if(bian<=9){
+                        bian = "0"+bian;
+                    }else{
+                        bian;
+                    }
+                    return bian;//做完判断要返回值
+                }
+               /* if(d <10){
+                    d="0"+d;
+                }
+                if(f<10){
+                    f="0"+f;
+                }*/
+                //月份改大写
+                switch(date1.getMonth()+1){
+                    case 1:
+                        month="一月";
+                        break;
+                    case 2:
+                        month="二月";
+                        break;
+                    case 3:
+                        month="三月";
+                        break;
+                    case 4:
+                        month="四月";
+                        break;
+                    case 5:
+                        month="五月";
+                        break;
+                    case 6:
+                        month="六月";
+                        break;
+                    case 7:
+                        month="七月";
+                        break;
+                    case 8:
+                        month="八月";
+                        break;
+                    case 9:
+                        month="九月";
+                        break;
+                    case 10:
+                        month="十月";
+                        break;
+                    case 11:
+                        month="十一月";
+                        break;
+                    case 12:
+                        month="十二月";
+                        break;
+
+                }
+                //4.在timeBox里面写入时分秒
+                //timeBox.innerHTML = f + ":" + d + ":" + c;
+                timeBox.innerHTML = bu(date1.getHours())+":"+bu(date1.getMinutes())+":"+bu(date1.getSeconds());
+                var week =["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+                //也可以用switch改写, 先var = month(全局变量);再switch(date1.getMonth)case 1:month = "一月";break;
+                //var week1 = ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"];
+                //3.在年月日星期dateBox的l盒子里放入年月日星期
+                dateBox.innerHTML = date1.getFullYear()+"年"+"&nbsp;"+
+                        month/*week1[(date1.getMonth())]*/+"&nbsp;"+
+                        date1.getDate()+"日"+"&nbsp;"+"&nbsp;"+
+                        week[date1.getDay()];
+            }
+            clock();
+            //5.开启定时器，让时间动起来 调用函数
+            var t = setInterval(clock,1000);
+
+
+            //7.给暂停按钮加点击时间，让时间停在此刻
+            var bool = true;
+            btn[0].onclick = function(){
+               //if(bool){
+                   clearInterval(t);
+                   //btn[0].innerHTML = "启动";
+               /*}*//*else{
+                   t = setInterval(clock,1000);
+                   btn[0].innerHTML = "停止";
+               }*/
+               // bool = !bool;
+            };
+            btn[1].onclick = function () {
+               t = setInterval(clock,1000);//方便调用t 因为之前已经存在t里面了
+            }
+        </script>
+    </body>
+</html>
